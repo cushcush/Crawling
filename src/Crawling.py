@@ -18,9 +18,9 @@ driver = webdriver.Chrome()
 driver.get('https://www.instagram.com/')
 time.sleep(3)
 elem = driver.find_element_by_name('username')
-elem.send_keys('kuminkyu93@naver.com')
+elem.send_keys('아이디입력')
 elem = driver.find_element_by_name('password')
-elem.send_keys('tkfkd325!')
+elem.send_keys('비밀번호입력')
     
 time.sleep(1)
 
