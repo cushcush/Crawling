@@ -1,0 +1,28 @@
+
+크롤링 위치
+
+-로그인
+/html/body/div/section/main/article/div[2]/div/div/form/div/div[3]/button
+
+-나중에하기1
+/html/body/div/section/main/div/div/div/section/div/button
+
+-나중에하기2
+/html/body/div[4]/div/div/div/div[3]/button[2]
+
+-검색
+/html/body/div/section/nav/div[2]/div/div/div[2]/input
+
+-텍스트
+/html/body/div[3]/div[2]/div/article/div[3]/div/ul/div/li/div/div
+
+-다음버튼
+/html/body/div[3]/div/div/div/a[2]
+
+-첫 게시물
+'#react-root > section > main > article > div.EZdmt > div > div > div:nth-child(1)'
+                                    ' > div:nth-child(1) > a > div > div._9AhH0'
+
+-다음버튼
+body > div._2dDPU.CkGkG > div.EfHg9 > div > div '
+                                            '> a._65Bje.coreSpriteRightPaginationArrow
