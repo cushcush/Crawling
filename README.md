@@ -55,4 +55,4 @@
 1. git push origin master
 
 #### PULL
-1. git puss
+1. git push
