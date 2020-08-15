@@ -34,13 +34,12 @@
 
 ## 버튼 위치 찾는 방법
 1. copy selector
-#react-root > section > main > div > div > div > div > button
+    1. #react-root > section > main > div > div > div > div > button
 
 1. copy Xpath => """ 앞뒤로 따움표 3개 입력 필요 """
-//*[@id="react-root"]/section/main/div/div/div/div/button
-https://coding-0830.tistory.com/9
+    1. //*[@id="react-root"]/section/main/div/div/div/div/button
+    1. https://coding-0830.tistory.com/9
 
 1. copy full Xpath
-/html/body/div[1]/section/main/div/div/div/div/button
-
-/html/body/div[1]/section/main/div/div/div/div/button
+    1. /html/body/div[1]/section/main/div/div/div/div/button
+    1. /html/body/div[1]/section/main/div/div/div/div/button
