@@ -20,7 +20,7 @@ time.sleep(5)
 elem = driver.find_element_by_name('username')
 elem.send_keys('아이디입력')
 elem = driver.find_element_by_name('password')
-elem.send_keys('')
+elem.send_keys('비밀번호입력')
     
 time.sleep(5)
 
