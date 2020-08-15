@@ -13,8 +13,6 @@
     1. 다음 페이지 넘어가기
     1. 크롤링한 데이터 .txt파일로 저장
 
-
-
 ### 롤링 위치
 - 로그인: /html/body/div/section/main/article/div[2]/div/div/form/div/div[3]/button
 - 나중에하기1: /html/body/div/section/main/div/div/div/section/div/button
