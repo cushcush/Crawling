@@ -16,28 +16,28 @@ plusUrl = input('검색할 태그를 입력하세요 : ')
 driver = webdriver.Chrome()
 
 driver.get('https://www.instagram.com/')
-time.sleep(3)
+time.sleep(5)
 elem = driver.find_element_by_name('username')
-elem.send_keys('아이디입력')
+elem.send_keys('kuminkyu93@naver.com')
 elem = driver.find_element_by_name('password')
-elem.send_keys('비밀번호입력')
+elem.send_keys('tkfkd325!')
     
-time.sleep(1)
+time.sleep(5)
 
 #로그인 클릭 버튼
 login_button = driver.find_element_by_xpath('/html/body/div/section/main/article/div[2]/div/div/form/div/div[3]/button')
 login_button.click()
-time.sleep(2)
+time.sleep(5)
 
 #나중에 하기1
-later_1 = driver.find_element_by_xpath('/html/body/div/section/main/div/div/div/div/button')
+later_1 = driver.find_element_by_css_selector('#react-root > section > main > div > div > div > div > button')
 later_1.click()
-time.sleep(2)
+time.sleep(5)
 
 #나중에 하기2
 later_2 = driver.find_element_by_xpath('/html/body/div[4]/div/div/div/div[3]/button[2]')
 later_2.click()
-time.sleep(2)
+time.sleep(5)
 
 #검색
 search_1 = driver.find_element_by_xpath('/html/body/div/section/nav/div[2]/div/div/div[2]/input')
@@ -57,7 +57,7 @@ driver.find_element_by_css_selector('#react-root > section > main > article > di
 time.sleep(2)
 
 #크롤링 범위설정
-for i in range(30):
+for i in range(10):
     time.sleep(1)
     try:
         data = driver.find_element_by_css_selector('.C7I1f.X7jCj')  # C7I1f X7jCj  # 글이 있는 구역
