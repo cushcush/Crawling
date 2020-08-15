@@ -32,7 +32,7 @@
 1. chromedriver.exe 버전 맞추기
 1. vscode에서 필요한 pip install 해주기 (selenium,pandas등)
 
-## 버튼 위치 찾는 방법
+### 버튼 위치 찾는 방법
 1. copy selector
     1. #react-root > section > main > div > div > div > div > button
 
@@ -43,3 +43,16 @@
 1. copy full Xpath
     1. /html/body/div[1]/section/main/div/div/div/div/button
     1. /html/body/div[1]/section/main/div/div/div/div/button
+
+### 깃 명령어
+
+#### 환경설정
+1. 해당 파일 위치로 가서 git clone (github repository주소 복사)
+
+#### PUSH
+1. git add . --all
+1. git commit -m "update"
+1. git push origin master
+
+#### PULL
+1. git puss
