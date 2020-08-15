@@ -9,7 +9,6 @@ import re
 import pandas as pd
 
 instagram_tags = []
-instagram_tag_dates = []
 
 plusUrl = input('검색할 태그를 입력하세요 : ')
 
@@ -64,7 +63,7 @@ for i in range(10):
         tag_raw = data.text
         
         tags = re.findall('#[A-Za-z0-9가-힣]+', tag_raw)
-        tag = ''.join(tags).replace("#", " ")  # "#" 제거
+        tag = ''.join(tags).replace("#"." ")  # "#" 제거
 
         tag_data = tag.split()
 
@@ -75,7 +74,7 @@ for i in range(10):
    
     except:
         instagram_tags.append("error")
-        instagram_tag_dates.append('error')
+        
 
     try:
         WebDriverWait(driver, 100).until( #값을 불러올때까지 기다려줌 
