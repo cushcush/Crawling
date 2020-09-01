@@ -9,16 +9,23 @@ import re
 import pandas as pd
 import requests
 
+from urllib.request import urlopen
+from urllib.parse import quote_plus
+from bs4 import BeautifulSoup
+
 # instagram_tags = []
 # instagram_date = []
 # instagram_url = []
 # instagram_userid = []
 
-URL = 'http://cush.kr:7770/api/add'
+# 연결부분1
+# URL = 'http://cush.kr:7770/api/add'
 
 Search_Tag = input('검색할 태그를 입력하세요 : ')
 
-Search_Cnt = input('검색할 수를 입력하시오 : ')
+# headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36'}
+# url ='https://www.instagram.com/'
+# html = requests.get(url, headers = headers).text
 
 driver = webdriver.Chrome()
 
@@ -58,7 +65,7 @@ time.sleep(2)
 
 #검색 엔터2 (작동)
 search_1.send_keys(Keys.ENTER)
-time.sleep(2)
+time.sleep(3)
 
 driver.find_element_by_css_selector('#react-root > section > main > article > div:nth-child(3) > div > div:nth-child(1) > div:nth-child(1) > a > div.eLAPa > div._9AhH0').click()
 time.sleep(2)
@@ -70,8 +77,29 @@ all_data = []
 # instagram_date.append(0)
 # instagram_userid.append(0)
 
+# html = driver.page_source
+# soup = BeautifulSoup(html,"html.parser")
+
+# insta = soup.select('#react-root > section > main > article > div:nth-child(3) > div > div:nth-child(1) > div:nth-child(1)')
+
+k = 5
+
+# n = 1
+# for i in insta:
+#     print('https://www.instagram.com' + i.a['href'])
+#     imgUrl = i.select_one('.KL4Bh').img['src']
+#     with urlopen(imgUrl) as f:
+#         with open('./img/' + Search_Tag + str(n) + '.jpg','wb') as h:
+#             img = f.read()
+#             h.write(img)
+#     n += 1
+    
+#     if i == k:
+#         break
+    
+
 #크롤링 범위설정
-for i in range(Search_Cnt):
+for i in range(k):
     time.sleep(1)
     try:
         
@@ -80,12 +108,19 @@ for i in range(Search_Cnt):
         element = driver.find_element_by_xpath('/html/body/div[1]/section/main/article/div[2]/div/div['+str(int(i/3)+1)+']/div['+str((i%3)+1)+']/a')
         url = element.get_attribute('href')
         
-        # print(url)
+        print(url)
 
         element2 = driver.find_element_by_xpath('/html/body/div[1]/section/main/article/div[2]/div/div['+str(int(i/3)+1)+']/div['+str((i%3)+1)+']/a/div[1]/div[1]/img')
         imgUrl = element2.get_attribute('src')
 
-        # print(imgUrl)
+        print(imgUrl)
+
+        i = i+1
+
+        with urlopen(imgUrl) as f:
+            with open('./img/' + Search_Tag + str(i) + '.jpg','wb') as h:
+                img = f.read()
+                h.write(img)
 
         data = driver.find_element_by_css_selector('.C7I1f.X7jCj')  # C7I1f X7jCj  # 글이 있는 구역
         tag_raw = data.text
@@ -107,14 +142,16 @@ for i in range(Search_Cnt):
         # print(userid.text)
         
         # 리스트에 값 넣기
-        tmp_dict = {
-            'url': url,
-            'imgUrl': imgUrl, 
-            'hashtag': tags,
-            'userID': userid.text, 
-        }
 
-        res = requests.post(URL, data=tmp_dict)
+        # 연결부분2
+        # tmp_dict = {
+        #     'url': url,
+        #     'imgUrl': imgUrl, 
+        #     'hashtag': tags,
+        #     'userID': userid.text, 
+        # }
+
+        # res = requests.post(URL, data=tmp_dict)
 
 
     except:
