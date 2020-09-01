@@ -83,7 +83,7 @@ for i in range(Search_Cnt):
         # print(url)
 
         element2 = driver.find_element_by_xpath('/html/body/div[1]/section/main/article/div[2]/div/div['+str(int(i/3)+1)+']/div['+str((i%3)+1)+']/a/div[1]/div[1]/img')
-        imgUrl = element.get_attribute('src')
+        imgUrl = element2.get_attribute('src')
 
         # print(imgUrl)
 
